@@ -5,7 +5,8 @@
 // step 1: without space, compare length: if >1 then false
 // length1 = length2+1 || length1 == length 2 
 //  
-// step 2: 
+// step 2: iterate through both string, if char does not match
+// 
 // 
 
 
@@ -41,4 +42,10 @@ var isOneAway = function(str1, str2){
 	return true;
 }
 
-isOneAway("pale","ale")
+// TEST
+// isOneAway("pale","ale")
+// isOneAway("pales","pale")
+// isOneAway("pale","bale")
+// isOneAway("pale","bae")
+
+
