@@ -2,24 +2,50 @@
 // 3 edits: insert a char, delete a char, replace a char
 // given 2 strings, write a function to see if they are one edit away
 
-// step 1: without space, compare length: 
+// step 1: without space, compare length: if >1 then false
 // length1 = length2+1 || length1 == length 2 
 //  
-// step 2: compare chars 
+// step 2: iterate through both string, if char does not match
+// 
 // 
 
-var checkMissing = function(str1,str2){
-	var length1 = str1.length;
-	var length2 = str2.length;
 
-	if (length1 !== length2 + 1){
+
+
+var isOneAway = function(str1, str2){
+	let length1 = str1.length, length2 = str2.length;
+
+	if(Math.abs(length1 - length2)>1){
 		return false 
-	} else {
-		if()
 	}
+
+	let isEdited = false;
+	for(let i=0, j=0; i< length1 && j < length2; i++,j++){
+		if(str1[i]!=str2[j]){
+			if(isEdited){
+				return false; 
+			}
+			
+			if (length1>length2){
+			  j--;
+			} 
+			else if (length1< length2){
+			  i--;
+			  
+			}
+			
+			isEdited = true
+
+		}
+	}
+	
+	return true;
 }
 
-var checkDiff = function(str1,str2){
+// TEST
+// isOneAway("pale","ale")
+// isOneAway("pales","pale")
+// isOneAway("pale","bale")
+// isOneAway("pale","bae")
 
-}
 
