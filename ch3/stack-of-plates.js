@@ -52,8 +52,41 @@ SetOfStacks.prototype.popAt = function(index){
 
 
 
+// TEST
+/* TESTS */
 
+var s = new SetOfStacks(3);
+s.push(1);
+s.push(2);
+s.push(3);
+s.push(4);
+s.push(5);
+s.push(6);
+s.push(7);
+s.push(8);
+s.push(9);
+s.push(10);
+s.push(11);
+s.push(12);
+s.push(13);
+s.push(14);
 
+console.log(s.stackSet);
+
+// result 
+[ [ 1, 2, 3 ],
+  [ 4, 5, 6 ],
+  [ 7, 8, 9 ],
+  [ 10, 11, 12 ],
+  [ 13, 14 ] ]
+
+s.popAt(2);
+// result 
+9
+console.log(s.stackSet);
+
+// result, 9 is deleted from 
+[ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8 ], [ 10, 11, 12 ], [ 13, 14 ] ]
 
 
 
